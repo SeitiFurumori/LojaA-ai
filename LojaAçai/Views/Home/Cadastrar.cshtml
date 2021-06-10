@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+@TempData["msg"]
+
+<form method="post" action="~/Home/Cadastrar">
+    <div class="container">
+        <h2>Cadastrar</h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Usuário: </label>
+                <input type="text" name="usuario" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Senha: </label>
+                <input type="text" name="senha" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                <input class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-sm-12">
+        <button type="button" onclick="window.location.href='/Home/Logar'" class="btn btn-primary">VOLTAR</button>
+    </div>
+</div>

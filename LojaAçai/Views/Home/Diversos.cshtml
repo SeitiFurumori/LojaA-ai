@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Diversos";
+}
+@TempData["msg"]
+
+<form method="post" action="~/Home/Diversos">
+    <div class="container">
+        <h2>Diversos</h2>
+        <img src="~/imagens/diversos.jpg" alt="acai com diversos" />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Preço: 4.50</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Quantidade: </label>
+                <input type="text" name="quantidade" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                <input class="btn btn-primary" type="submit" value="COMPRAR" />
+            </div>
+        </div>
+    </div>
+</form>

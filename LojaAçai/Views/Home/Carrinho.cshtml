@@ -1,0 +1,22 @@
+﻿@model List<LojaAçai.Models.CadastrarModels>
+@{
+    ViewBag.Title = "Carrinho";
+}
+
+<h2>Carrinho</h2>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (LojaAçai.Models.CadastrarModels v in Model)
+
+        {
+
+            <li>Quantidade: @v.Quantidade | Descrição: @v.Descricao @v.Tipo | Preço: @v.Preco <a href="~/Home/Excluir/@v.Codigo">excluir</a></li>
+
+        }
+    </ul>
+}
+
+
+

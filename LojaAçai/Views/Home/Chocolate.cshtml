@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Chocolate";
+}
+@TempData["msg"]
+
+<form method="post" action="~/Home/Chocolate">
+    <div class="container">
+        <h2>Completo</h2>
+        <img src="~/imagens/barca.png" alt="Barca de açai" />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Preço: 5.50</label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Quantidade: </label>
+                <input type="text" name="quantidade" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                <input class="btn btn-primary" type="submit" value="COMPRAR" />
+            </div>
+        </div>
+    </div>
+</form>
+

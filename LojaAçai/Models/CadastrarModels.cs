@@ -19,6 +19,7 @@ namespace LojaAçai.Models
         private string id;
         private string msg;
 
+
         public string Username
         {
             get { return usuario; }
@@ -259,6 +260,27 @@ namespace LojaAçai.Models
                 query.Parameters.AddWithValue("@codigo", Codigo);
                 query.ExecuteNonQuery();
                 msg = "Deletado com sucesso";
+            }
+            catch (Exception ex1)
+            {
+                msg = "Falha " + ex1.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return msg;
+        }
+        public string Comprar()
+        {
+            MySqlConnection con = new MySqlConnection(conexaoBD);
+            try
+            {
+                con.Open();
+                MySqlCommand query = new MySqlCommand("delete from venda where FK_USUARIO_codigo =@session", con);
+                query.Parameters.AddWithValue("@session", Session);
+                query.ExecuteNonQuery();
+                msg = "Comprado com sucesso";
             }
             catch (Exception ex1)
             {

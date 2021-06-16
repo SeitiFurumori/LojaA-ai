@@ -182,5 +182,18 @@ namespace LojaAçai.Controllers
             TempData["msg"] = msg;
             return RedirectToAction("Carrinho");
         }
+        public ActionResult Comprar()
+        {
+            Models.CadastrarModels c = new Models.CadastrarModels();
+            c.Session = Session["UsuarioLogado"].ToString();
+            string msg = c.Comprar();
+            TempData["msg"] = msg;
+            return RedirectToAction("Carrinho");
+        }
+        public ActionResult Sair()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
+        }
     }
 }

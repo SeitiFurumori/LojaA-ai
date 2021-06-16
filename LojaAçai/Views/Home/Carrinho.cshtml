@@ -2,9 +2,7 @@
 @{
     ViewBag.Title = "Carrinho";
 }
-
 <h2>Carrinho</h2>
-
 @if (Model != null)
 {
     <ul>
@@ -12,11 +10,21 @@
 
         {
 
-            <li>Quantidade: @v.Quantidade | Descrição: @v.Descricao @v.Tipo | Preço: @v.Preco <a href="~/Home/Excluir/@v.Codigo">excluir</a></li>
+            <li>Quantidade: @v.Quantidade Produto: @v.Descricao @v.Tipo | Preço: @v.Preco <a href="~/Home/Excluir/@v.Codigo">excluir</a></li>
 
         }
     </ul>
 }
 
-
-
+<div class="row">
+    <form method="post" action="~/Home/Comprar">
+        <div class="col-sm-5">
+            <input class="btn btn-primary" type="submit" value="Finalizar" />
+        </div>
+    </form>
+    <form method="post" action="~/Home/Sair">
+        <div class="col-sm-5">
+            <input class="btn btn-primary" type="submit" value="Sair" />
+        </div>
+    </form>
+</div>

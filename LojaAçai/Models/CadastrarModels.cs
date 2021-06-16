@@ -176,7 +176,7 @@ namespace LojaAçai.Models
             try
             {
                 con.Open();
-                MySqlCommand query = new MySqlCommand("insert into venda(quantidade, FK_USUARIO_codigo, FK_produto_codigo) values (@quantidade,@session,1);", con);
+                MySqlCommand query = new MySqlCommand("insert into venda(quantidade, FK_USUARIO_codigo, FK_produto_codigo) values (@quantidade,@session,3);", con);
                 query.Parameters.AddWithValue("@quantidade", Quantidade);
                 query.Parameters.AddWithValue("@session", Session);
                 query.ExecuteNonQuery();
@@ -200,7 +200,7 @@ namespace LojaAçai.Models
             try
             {
                 con.Open();
-                MySqlCommand query = new MySqlCommand("insert into venda(quantidade, FK_USUARIO_codigo, FK_produto_codigo) values (@quantidade,@session,3);", con);
+                MySqlCommand query = new MySqlCommand("insert into venda(quantidade, FK_USUARIO_codigo, FK_produto_codigo) values (@quantidade,@session,1);", con);
                 query.Parameters.AddWithValue("@quantidade", Quantidade);
                 query.Parameters.AddWithValue("@session", Session);
                 query.ExecuteNonQuery();

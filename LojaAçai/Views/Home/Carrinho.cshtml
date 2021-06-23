@@ -10,12 +10,15 @@
 
         {
 
-            <li>Quantidade: @v.Quantidade Produto: @v.Descricao @v.Tipo | Preço: @v.Preco <a href="~/Home/Excluir/@v.Codigo">excluir</a></li>
+        <li>@v.Quantidade @v.Descricao @v.Tipo | Preço:R$ @v.Preco  | Total:R$ @v.Total  <a href="~/Home/Excluir/@v.Codigo">excluir</a></li>
 
         }
     </ul>
 }
-
+<br />
+<br />
+<br />
+<br />
 <div class="row">
     <form method="post" action="~/Home/Comprar">
         <div class="col-sm-5">
@@ -28,3 +31,4 @@
         </div>
     </form>
 </div>
+

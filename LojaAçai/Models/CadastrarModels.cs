@@ -18,6 +18,8 @@ namespace LojaAçai.Models
         private string preco;
         private string id;
         private string msg;
+        private string total;
+        private string totaltotal;
 
 
         public string Username
@@ -59,6 +61,16 @@ namespace LojaAçai.Models
         {
             get { return id; }
             set { id = value; }
+        }
+        public string Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
+        public string TotalTotal
+        {
+            get { return totaltotal; }
+            set { totaltotal = value; }
         }
         public string logar()
         {
@@ -223,12 +235,17 @@ namespace LojaAçai.Models
         {
             MySqlConnection con = new MySqlConnection(conexaoBD);
             List<CadastrarModels> lista = new List<CadastrarModels>();
+            
+
             try
             {
                 con.Open();
                 MySqlCommand query = new MySqlCommand("select venda.codigo, venda.quantidade , produto.descricao, produto.tipo, produto.preco from venda inner join produto on venda.FK_produto_codigo = produto.codigo and venda.FK_USUARIO_codigo = @session;", con);
                 query.Parameters.AddWithValue("@session", Session);
                 MySqlDataReader leitor = query.ExecuteReader();
+                double preco1;
+                int quantidade1; 
+                double total1;
                 while (leitor.Read())
                 {
                     CadastrarModels item = new CadastrarModels();
@@ -237,6 +254,10 @@ namespace LojaAçai.Models
                     item.Descricao = leitor["descricao"].ToString();
                     item.Tipo = leitor["tipo"].ToString();
                     item.Preco = leitor["preco"].ToString();
+                    quantidade1 = int.Parse(item.Quantidade);
+                    preco1 = double.Parse(item.Preco);
+                    total1 = (quantidade1 * preco1);
+                    item.Total = total1.ToString();
                     lista.Add(item);
                 }
             }

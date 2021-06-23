@@ -167,6 +167,7 @@ namespace LojaAçai.Controllers
                 CadastrarModels cm = new CadastrarModels();
                 cm.Session = Session["UsuarioLogado"].ToString();
                 List<CadastrarModels> lista = cm.ListarCarrinho();
+                
                 return View(lista);
             }
             else
